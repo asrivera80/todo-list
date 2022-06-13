@@ -1,0 +1,20 @@
+START RequestId: cc9940e5-9376-4c0e-928b-7b54beb2e5e6 Version: $LATEST
+Table name:default-TodosDynamoDbTable
+END RequestId: cc9940e5-9376-4c0e-928b-7b54beb2e5e6
+REPORT RequestId: cc9940e5-9376-4c0e-928b-7b54beb2e5e6	Duration: 1625.53 ms	Billed Duration: 1626 ms	Memory Size: 128 MB	Max Memory Used: 72 MB	Init Duration: 357.25 ms	
+START RequestId: 609d2ffe-a865-4a14-8086-f68794019ef9 Version: $LATEST
+Table name:default-TodosDynamoDbTable
+END RequestId: 609d2ffe-a865-4a14-8086-f68794019ef9
+REPORT RequestId: 609d2ffe-a865-4a14-8086-f68794019ef9	Duration: 258.95 ms	Billed Duration: 259 ms	Memory Size: 128 MB	Max Memory Used: 73 MB	
+START RequestId: 5ef10f42-671e-4f7b-9cf5-45a0c3ddeac3 Version: $LATEST
+Table name:default-TodosDynamoDbTable
+END RequestId: 5ef10f42-671e-4f7b-9cf5-45a0c3ddeac3
+REPORT RequestId: 5ef10f42-671e-4f7b-9cf5-45a0c3ddeac3	Duration: 261.65 ms	Billed Duration: 262 ms	Memory Size: 128 MB	Max Memory Used: 73 MB	
+START RequestId: f35a7322-441e-4012-b023-f8d1d1d96371 Version: $LATEST
+Table name:default-TodosDynamoDbTable
+END RequestId: f35a7322-441e-4012-b023-f8d1d1d96371
+REPORT RequestId: f35a7322-441e-4012-b023-f8d1d1d96371	Duration: 254.35 ms	Billed Duration: 255 ms	Memory Size: 128 MB	Max Memory Used: 73 MB	
+START RequestId: f8f9d36b-25e6-43ca-a304-6f37779e17bd Version: $LATEST
+Table name:default-TodosDynamoDbTable
+END RequestId: f8f9d36b-25e6-43ca-a304-6f37779e17bd
+REPORT RequestId: f8f9d36b-25e6-43ca-a304-6f37779e17bd	Duration: 232.57 ms	Billed Duration: 233 ms	Memory Size: 128 MB	Max Memory Used: 73 MB	

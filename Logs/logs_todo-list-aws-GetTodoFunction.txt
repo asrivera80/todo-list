@@ -1,0 +1,12 @@
+START RequestId: e6479f4d-2246-4511-b4aa-d1c3e3185fe6 Version: $LATEST
+Result getItem:{'ResponseMetadata': {'RequestId': 'UMRIMF31MFIG259VSCR3MP34HNVV4KQNSO5AEMVJF66Q9ASUAAJG', 'HTTPStatusCode': 200, 'HTTPHeaders': {'server': 'Server', 'date': 'Thu, 09 Jun 2022 06:58:25 GMT', 'content-type': 'application/x-amz-json-1.0', 'content-length': '2', 'connection': 'keep-alive', 'x-amzn-requestid': 'UMRIMF31MFIG259VSCR3MP34HNVV4KQNSO5AEMVJF66Q9ASUAAJG', 'x-amz-crc32': '2745614147'}, 'RetryAttempts': 0}}
+END RequestId: e6479f4d-2246-4511-b4aa-d1c3e3185fe6
+REPORT RequestId: e6479f4d-2246-4511-b4aa-d1c3e3185fe6	Duration: 1631.57 ms	Billed Duration: 1632 ms	Memory Size: 128 MB	Max Memory Used: 71 MB	Init Duration: 354.88 ms	
+START RequestId: 7c0fa774-4821-43d7-b423-110649762d78 Version: $LATEST
+Result getItem:{'Item': {'checked': False, 'createdAt': '1654757905.9734364', 'text': 'Integration text example - GET', 'id': '8f40cd48-e7c1-11ec-af23-826afa852400', 'updatedAt': '1654757905.9734364'}, 'ResponseMetadata': {'RequestId': 'IDM3T77TS69VSS3AV2G6GU91J7VV4KQNSO5AEMVJF66Q9ASUAAJG', 'HTTPStatusCode': 200, 'HTTPHeaders': {'server': 'Server', 'date': 'Thu, 09 Jun 2022 06:58:26 GMT', 'content-type': 'application/x-amz-json-1.0', 'content-length': '209', 'connection': 'keep-alive', 'x-amzn-requestid': 'IDM3T77TS69VSS3AV2G6GU91J7VV4KQNSO5AEMVJF66Q9ASUAAJG', 'x-amz-crc32': '3202198960'}, 'RetryAttempts': 0}}
+END RequestId: 7c0fa774-4821-43d7-b423-110649762d78
+REPORT RequestId: 7c0fa774-4821-43d7-b423-110649762d78	Duration: 240.00 ms	Billed Duration: 241 ms	Memory Size: 128 MB	Max Memory Used: 71 MB	
+START RequestId: d1e9ffd0-7d91-43fb-8278-90e697b726ea Version: $LATEST
+Result getItem:{'Item': {'checked': 'true', 'createdAt': '1654757909.2742908', 'text': 'Integration text example - Modified', 'id': '91387844-e7c1-11ec-af23-826afa852400', 'updatedAt': Decimal('1654757911315')}, 'ResponseMetadata': {'RequestId': 'BJMP2DLT9LEIUIPR74VJQRU2CRVV4KQNSO5AEMVJF66Q9ASUAAJG', 'HTTPStatusCode': 200, 'HTTPHeaders': {'server': 'Server', 'date': 'Thu, 09 Jun 2022 06:58:31 GMT', 'content-type': 'application/x-amz-json-1.0', 'content-length': '207', 'connection': 'keep-alive', 'x-amzn-requestid': 'BJMP2DLT9LEIUIPR74VJQRU2CRVV4KQNSO5AEMVJF66Q9ASUAAJG', 'x-amz-crc32': '1724702260'}, 'RetryAttempts': 0}}
+END RequestId: d1e9ffd0-7d91-43fb-8278-90e697b726ea
+REPORT RequestId: d1e9ffd0-7d91-43fb-8278-90e697b726ea	Duration: 264.65 ms	Billed Duration: 265 ms	Memory Size: 128 MB	Max Memory Used: 72 MB	

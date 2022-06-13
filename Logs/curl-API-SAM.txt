@@ -1,0 +1,41 @@
+Llamada:
+voclabs:~/todo-list-aws (develop) $ curl -X POST https://k98z83808f.execute-api.us-east-1.amazonaws.com/Prod/todos --data '{ "text": "Learn Serverless" }'
+{"statusCode": 200, "body": "{\"id\": \"a015a058-e7d5-11ec-9031-b294247b1d6a\", \"text\": \"Learn Serverless\", \"checked\": false, \"createdAt\": \"1654766524.0267482\", \"updatedAt\": \"1654766524.0267482\"}"}
+
+Logs:
+START RequestId: 022ae9e0-9bd5-46d2-ae76-65078fe59fd5 Version: $LATEST
+Table name:default-TodosDynamoDbTable
+END RequestId: 022ae9e0-9bd5-46d2-ae76-65078fe59fd5
+REPORT RequestId: 022ae9e0-9bd5-46d2-ae76-65078fe59fd5	Duration: 1771.10 ms	Billed Duration: 1772 ms	Memory Size: 128 MB	Max Memory Used: 72 MB	Init Duration: 359.41 ms	
+
+
+voclabs:~/todo-list-aws (develop) $ curl https://k98z83808f.execute-api.us-east-1.amazonaws.com/Prod/todos
+[{"checked": false, "createdAt": "1654757906.7745805", "text": "Integration text example", "id": "8fc0b1de-e7c1-11ec-af23-826afa852400", "updatedAt": "1654757906.7745805"}, {"checked": false, "createdAt": "1654766524.0267482", "text": "Learn Serverless", "id": "a015a058-e7d5-11ec-9031-b294247b1d6a", "updatedAt": "1654766524.0267482"}]voclabs:~/todo-list-aws (develop) $ 
+
+START RequestId: c8162d1d-ecbe-4886-9d73-ed86700d0bd6 Version: $LATEST
+END RequestId: c8162d1d-ecbe-4886-9d73-ed86700d0bd6
+REPORT RequestId: c8162d1d-ecbe-4886-9d73-ed86700d0bd6	Duration: 1608.15 ms	Billed Duration: 1609 ms	Memory Size: 128 MB	Max Memory Used: 71 MB	Init Duration: 375.08 ms	
+
+
+curl https://k98z83808f.execute-api.us-east-1.amazonaws.com/Prod/todos/8fc0b1de-e7c1-11ec-af23-826afa852400
+{"checked": false, "createdAt": "1654757906.7745805", "text": "Integration text example", "id": "8fc0b1de-e7c1-11ec-af23-826afa852400", "updatedAt": "1654757906.7745805"}
+
+START RequestId: fa8c797b-72fc-46e6-802b-727cb4f754c3 Version: $LATEST
+Result getItem:{'Item': {'checked': False, 'createdAt': '1654757906.7745805', 'text': 'Integration text example', 'id': '8fc0b1de-e7c1-11ec-af23-826afa852400', 'updatedAt': '1654757906.7745805'}, 'ResponseMetadata': {'RequestId': 'C6TIJNU9HOIQMPVHTUPKP4IBHVVV4KQNSO5AEMVJF66Q9ASUAAJG', 'HTTPStatusCode': 200, 'HTTPHeaders': {'server': 'Server', 'date': 'Thu, 09 Jun 2022 09:29:38 GMT', 'content-type': 'application/x-amz-json-1.0', 'content-length': '203', 'connection': 'keep-alive', 'x-amzn-requestid': 'C6TIJNU9HOIQMPVHTUPKP4IBHVVV4KQNSO5AEMVJF66Q9ASUAAJG', 'x-amz-crc32': '1269675362'}, 'RetryAttempts': 0}}
+END RequestId: fa8c797b-72fc-46e6-802b-727cb4f754c3
+REPORT RequestId: fa8c797b-72fc-46e6-802b-727cb4f754c3	Duration: 1596.02 ms	Billed Duration: 1597 ms	Memory Size: 128 MB	Max Memory Used: 71 MB	Init Duration: 374.59 ms	
+
+
+curl -X PUT https://k98z83808f.execute-api.us-east-1.amazonaws.com/Prod/todos/8fc0b1de-e7c1-11ec-af23-826afa852400 --data '{ "text": "Learn python and more", "checked": true }'
+{"checked": true, "createdAt": "1654757906.7745805", "text": "Learn python and more", "id": "8fc0b1de-e7c1-11ec-af23-826afa852400", "updatedAt": 1654767164795}
+
+START RequestId: c1abb19b-566a-4677-ae67-a1eb8eb86fc1 Version: $LATEST
+END RequestId: c1abb19b-566a-4677-ae67-a1eb8eb86fc1
+REPORT RequestId: c1abb19b-566a-4677-ae67-a1eb8eb86fc1	Duration: 1583.80 ms	Billed Duration: 1584 ms	Memory Size: 128 MB	Max Memory Used: 71 MB	Init Duration: 363.29 ms	
+
+curl -X DELETE https://k98z83808f.execute-api.us-east-1.amazonaws.com/Prod/todos/8fc0b1de-e7c1-11ec-af23-826afa852400
+-
+
+START RequestId: e7fb68da-b3f2-49f5-aa31-2a24a399a08b Version: $LATEST
+END RequestId: e7fb68da-b3f2-49f5-aa31-2a24a399a08b
+REPORT RequestId: e7fb68da-b3f2-49f5-aa31-2a24a399a08b	Duration: 1581.95 ms	Billed Duration: 1582 ms	Memory Size: 128 MB	Max Memory Used: 71 MB	Init Duration: 364.66 ms	

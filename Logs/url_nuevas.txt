@@ -1,0 +1,6 @@
+https://k98z83808f.execute-api.us-east-1.amazonaws.com/Prod/todos
+https://k98z83808f.execute-api.us-east-1.amazonaws.com/Prod/todos/{id}
+https://k98z83808f.execute-api.us-east-1.amazonaws.com/Prod/todos/{id}
+https://k98z83808f.execute-api.us-east-1.amazonaws.com/Prod/todos/{id}
+https://k98z83808f.execute-api.us-east-1.amazonaws.com/Prod/todos
+

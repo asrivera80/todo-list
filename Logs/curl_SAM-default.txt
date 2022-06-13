@@ -1,0 +1,14 @@
+curl -X POST http://127.0.0.1:8081/todos --data '{ "text": "Learn Serverless" }'
+{"statusCode": 200, "body": "{\"id\": \"56346d5e-e756-11ec-85e4-0242ac110002\", \"text\": \"Learn Serverless\", \"checked\": false, \"createdAt\": \"1654711854.0984435\", \"updatedAt\": \"1654711854.0984435\"}"}
+
+curl http://127.0.0.1:8081/todos
+[{"checked": false, "createdAt": "1654711854.0984435", "id": "56346d5e-e756-11ec-85e4-0242ac110002", "text": "Learn Serverless", "updatedAt": "1654711854.0984435"}]
+
+curl http://127.0.0.1:8081/todos/56346d5e-e756-11ec-85e4-0242ac110002
+{"checked": false, "createdAt": "1654711854.0984435", "id": "56346d5e-e756-11ec-85e4-0242ac110002", "text": "Learn Serverless", "updatedAt": "1654711854.0984435"}
+
+curl -X PUT http://127.0.0.1:8081/todos/56346d5e-e756-11ec-85e4-0242ac110002 --data '{ "text": "Learn Serverless", "che
+{"createdAt": "1654711854.0984435", "checked": true, "id": "56346d5e-e756-11ec-85e4-0242ac110002", "text": "Learn Serverless", "updatedAt": 1654711957283}
+
+curl -X DELETE http://127.0.0.1:8081/todos/56346d5e-e756-11ec-85e4-0242ac110002
+voclabs:~ $ 

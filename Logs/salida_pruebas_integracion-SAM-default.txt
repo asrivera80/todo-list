@@ -1,0 +1,39 @@
+============================= test session starts ==============================
+platform linux -- Python 3.7.5, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/ubuntu/todo-list-aws, configfile: pytest.ini
+collected 5 items
+
+test/integration/todoApiTest.py ---------------------------------------
+Starting - integration test Add TODO
+Response Add Todo: {"id": "8c058f38-e7c1-11ec-af23-826afa852400", "text": "Integration text example", "checked": false, "createdAt": "1654757900.452505", "updatedAt": "1654757900.452505"}
+ID todo:8c058f38-e7c1-11ec-af23-826afa852400
+End - integration test Add TODO
+.---------------------------------------
+Starting - integration test Delete TODO
+Response Add todo: {"id": "8d833234-e7c1-11ec-af23-826afa852400", "text": "Integration text example - Initial", "checked": false, "createdAt": "1654757903.0531073", "updatedAt": "1654757903.0531073"}
+ID todo:8d833234-e7c1-11ec-af23-826afa852400
+Response Delete Todo:<Response [200]>
+Response Get Todo https://k98z83808f.execute-api.us-east-1.amazonaws.com/Prod/todos/8d833234-e7c1-11ec-af23-826afa852400: <Response [404]>
+End - integration test Delete TODO
+.---------------------------------------
+Starting - integration test Get TODO
+Response Add Todo: {'statusCode': 200, 'body': '{"id": "8f40cd48-e7c1-11ec-af23-826afa852400", "text": "Integration text example - GET", "checked": false, "createdAt": "1654757905.9734364", "updatedAt": "1654757905.9734364"}'}
+ID todo:8f40cd48-e7c1-11ec-af23-826afa852400
+Response Get Todo: {'checked': False, 'createdAt': '1654757905.9734364', 'text': 'Integration text example - GET', 'id': '8f40cd48-e7c1-11ec-af23-826afa852400', 'updatedAt': '1654757905.9734364'}
+End - integration test Get TODO
+.---------------------------------------
+Starting - integration test List TODO
+Response Add Todo: {'statusCode': 200, 'body': '{"id": "8fc0b1de-e7c1-11ec-af23-826afa852400", "text": "Integration text example", "checked": false, "createdAt": "1654757906.7745805", "updatedAt": "1654757906.7745805"}'}
+ID todo:8fc0b1de-e7c1-11ec-af23-826afa852400
+Response List Todo:[{'checked': False, 'createdAt': '1654757906.7745805', 'text': 'Integration text example', 'id': '8fc0b1de-e7c1-11ec-af23-826afa852400', 'updatedAt': '1654757906.7745805'}]
+End - integration test List TODO
+.---------------------------------------
+Starting - integration test Update TODO
+Response Add todo: {"id": "91387844-e7c1-11ec-af23-826afa852400", "text": "Integration text example - Initial", "checked": false, "createdAt": "1654757909.2742908", "updatedAt": "1654757909.2742908"}
+ID todo:91387844-e7c1-11ec-af23-826afa852400
+Response Update todo: {'checked': 'true', 'createdAt': '1654757909.2742908', 'text': 'Integration text example - Modified', 'id': '91387844-e7c1-11ec-af23-826afa852400', 'updatedAt': 1654757911315}
+Response Get Todo: {'checked': 'true', 'createdAt': '1654757909.2742908', 'text': 'Integration text example - Modified', 'id': '91387844-e7c1-11ec-af23-826afa852400', 'updatedAt': 1654757911315}
+End - integration test Update TODO
+.
+
+============================== 5 passed in 13.58s ==============================
