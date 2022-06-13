@@ -281,5 +281,19 @@ class TestDatabaseFunctionsError(unittest.TestCase):
         print ('End: test_delete_todo_error')
 
 
+    def test_translate_todo(self):
+        print ('---------------------')
+        print ('Start: test_translate_todo')
+        
+        from src.todoList import get_translate
+        translation = get_translate(self.text, "en", self.dynamodb)
+        print ('Response translate en:' + str(translation))
+        self.assertEqual(None, translation)
+        translation = get_translate(self.text, "fr", self.dynamodb)
+        print ('Response translate fr:' + str(translation))
+        self.assertEqual(None, translation)
+        print ('End: test_delete_todo')
+
+
 if __name__ == '__main__':
     unittest.main()
