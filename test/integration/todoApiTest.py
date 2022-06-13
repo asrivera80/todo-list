@@ -9,7 +9,7 @@ import json
 import pytest
 
 BASE_URL = os.environ.get("BASE_URL")
-#BASE_URL = "https://m0qwfec693.execute-api.us-east-1.amazonaws.com/Prod"
+#BASE_URL = "https://.execute-api.us-east-1.amazonaws.com/Prod"
 DEFAULT_TIMEOUT = 2  # in secs
 
 
@@ -166,40 +166,6 @@ class TestApi(unittest.TestCase):
             response.status_code, 200, "Error en la petición API a {url}"
         )
         print('End - integration test Update TODO')
-    def test_api_deletetodo(self):
-        print('---------------------------------------')
-        print('Starting - integration test Delete TODO')
-        #Add TODO
-        url = BASE_URL+"/todos"
-        data = {
-         "text": "Integration text example - Initial"
-        }
-        response = requests.post(url, data=json.dumps(data))
-        json_response = response.json()
-        print('Response Add todo: ' + json_response['body'])
-        jsonbody= json.loads(json_response['body'])
-        ID_TODO = jsonbody['id']
-        print ('ID todo:'+ID_TODO)
-        self.assertEqual(
-            response.status_code, 200, "Error en la petición API a {url}"
-        )
-        self.assertEqual(
-            jsonbody['text'], "Integration text example - Initial", "Error en la petición API a {url}"
-        )
-        #Delete TODO to restore state
-        response = requests.delete(url + '/' + ID_TODO)
-        self.assertEqual(
-            response.status_code, 200, "Error en la petición API a {url}"
-        )
-        print ('Response Delete Todo:' + str(response))
-        #Test GET TODO
-        url = BASE_URL+"/todos/"+ID_TODO
-        response = requests.get(url)
-        print('Response Get Todo '+ url+': '+ str(response))
-        self.assertEqual(
-            response.status_code, 404, "Error en la petición API a {url}"
-        )
-        print('End - integration test Delete TODO')
     def test_api_translatetodo(self):
         print('---------------------------------------')
         print('Starting - integration test translate TODO')
@@ -238,4 +204,37 @@ class TestApi(unittest.TestCase):
             response.status_code, 200, "Error en la petición API a {url}"
         )
         print('End - integration test translate TODO')
-    
+    def test_api_deletetodo(self):
+        print('---------------------------------------')
+        print('Starting - integration test Delete TODO')
+        #Add TODO
+        url = BASE_URL+"/todos"
+        data = {
+         "text": "Integration text example - Initial"
+        }
+        response = requests.post(url, data=json.dumps(data))
+        json_response = response.json()
+        print('Response Add todo: ' + json_response['body'])
+        jsonbody= json.loads(json_response['body'])
+        ID_TODO = jsonbody['id']
+        print ('ID todo:'+ID_TODO)
+        self.assertEqual(
+            response.status_code, 200, "Error en la petición API a {url}"
+        )
+        self.assertEqual(
+            jsonbody['text'], "Integration text example - Initial", "Error en la petición API a {url}"
+        )
+        #Delete TODO to restore state
+        response = requests.delete(url + '/' + ID_TODO)
+        self.assertEqual(
+            response.status_code, 200, "Error en la petición API a {url}"
+        )
+        print ('Response Delete Todo:' + str(response))
+        #Test GET TODO
+        url = BASE_URL+"/todos/"+ID_TODO
+        response = requests.get(url)
+        print('Response Get Todo '+ url+': '+ str(response))
+        self.assertEqual(
+            response.status_code, 404, "Error en la petición API a {url}"
+        )
+        print('End - integration test Delete TODO')
