@@ -283,12 +283,16 @@ class TestDatabaseFunctionsError(unittest.TestCase):
 
     def test_translate_todo(self):
         print ('---------------------')
-        print ('Start: test_get_translation_todo')
+        print ('Start: test_translate_todo')
+        
         from src.todoList import get_translate
-        translate = get_translate(self.text, "en", self.dynamodb)
-        print (translate)
-        self.assertEqual(translate, "Learn DevOps and Cloud at UNIR")
-        print ('End: test_translate_todo')
+        translation = get_translate(self.text, "en", self.dynamodb)
+        print ('Response translate en:' + str(translation))
+        self.assertEqual(None, translation)
+        translation = get_translate(self.text, "fr", self.dynamodb)
+        print ('Response translate fr:' + str(translation))
+        self.assertEqual(None, translation)
+        print ('End: test_delete_todo')
 
 
 if __name__ == '__main__':
