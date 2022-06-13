@@ -203,28 +203,6 @@ class TestDatabaseFunctions(unittest.TestCase):
         print ('End: test_delete_todo_error')
 
 
-class TestDatabaseFunctionsError(unittest.TestCase):
-    def setUp(self):
-        print ('---------------------')
-        print ('Start: setUp')
-        warnings.filterwarnings(
-            "ignore",
-            category=ResourceWarning,
-            message="unclosed.*<socket.socket.*>")
-        warnings.filterwarnings(
-            "ignore",
-            category=DeprecationWarning,
-            message="callable is None.*")
-        warnings.filterwarnings(
-            "ignore",
-            category=DeprecationWarning,
-            message="Using or importing.*")
-        """Create the mock database and table"""
-        self.dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
-        self.is_local = 'true'
-        print ('End: setUp')
-        
-        
     def test_get_todo_error(self):
         print ('---------------------')
         print ('Start: test_get_todo_error')
