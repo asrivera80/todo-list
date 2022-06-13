@@ -28,9 +28,11 @@ class TestDatabaseFunctions(unittest.TestCase):
             message="Using or importing.*")
         """Create the mock database and table"""
         self.dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
+        self.translate = boto3.client(service_name='translate', region_name='us-east-1', use_ssl=True)
         self.is_local = 'true'
         self.uuid = "123e4567-e89b-12d3-a456-426614174000"
         self.text = "Aprender DevOps y Cloud en la UNIR"
+        self.lang = "EN"
 
         from src.todoList import create_todo_table
         self.table = create_todo_table(self.dynamodb)
@@ -281,14 +283,24 @@ class TestDatabaseFunctionsError(unittest.TestCase):
         print ('End: test_delete_todo_error')
 
 
-    def test_translate_todo(self):
+    def test_translate_todo_error(self):
         print ('---------------------')
-        print ('Start: test_get_translation_todo')
-        from src.todoList import get_translate
-        translate = get_translate(self.text, "en", self.dynamodb)
-        print (translate)
-        self.assertEqual(translate, "Learn DevOps and Cloud at UNIR")
-        print ('End: test_translate_todo')
+        print ('Start: test_translate_todo_error')
+        from src.todoList import translated_item
+        from src.todoList import put_item
+        from src.todoList import get_item
+        
+        # Table mock
+        self.assertRaises(Exception, translated_item("", self.lang, self.dynamodb))
+        
+        responsePut = put_item(self.text, self.dynamodb)
+        print ('Response put_item:' + str(responsePut))
+        idItem = json.loads(responsePut['body'])['id']
+        print ('Id item:' + idItem)
+        responseGet = get_item(idItem,self.dynamodb)
+        
+        self.assertRaises(Exception, translated_item(idItem, "", self.dynamodb))
+        print ('End: test_translate_todo_error')
 
 
 if __name__ == '__main__':

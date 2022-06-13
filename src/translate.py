@@ -1,23 +1,16 @@
 import json
-import decimalencoder
-import todoList
+import decimalencoder # pylint: disable=E0401
+import todoList # pylint: disable=E0401
 
 
 def translate(event, context):
+    """logic for the translate"""
     # create a response
-    item = todoList.get_item(event['pathParameters']['id'])
-    translate = str(
-        todoList.get_translate(
-            item["text"], event['pathParameters']['idioma']
-            )
+    item = todoList.get_item(
+        event['pathParameters']['id'],
+        event['pathParameters']['idioma']
         )
-    item["text"] = translate
-    print("Pintar Traduccion: \n\r")
-    print(
-        json.dumps(
-            item["text"], cls=decimalencoder.DecimalEncoder, indent=4
-            )
-        )
+    print("ITEM EN TRANSLATE:{}".format(item))
     if item:
         response = {
             "statusCode": 200,
