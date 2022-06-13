@@ -1,6 +1,6 @@
 import json
-import decimalencoder # pylint: disable=E0401
-import todoList # pylint: disable=E0401
+import decimalencoder
+import todoList
 
 
 def translate(event, context):
